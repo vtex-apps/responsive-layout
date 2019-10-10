@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "lint": "tsc --noEmit && eslint --quiet --fix --ext ts,tsx .",
+    "lint": "tsc --noEmit && eslint --ext ts,tsx .",
     "test": "vtex-test-tools test"
   },
   "dependencies": {
@@ -19,7 +19,6 @@
     "eslint": "5.x",
     "eslint-config-vtex-react": "^5.0.1",
     "prettier": "^1.18.2",
-    "prop-types": "^15.7.2",
     "typescript": "3.5.2"
   }
 }
