@@ -1,11 +1,9 @@
-import React from 'react'
-
 const ResponsiveLayoutDummy = () => {
-  console.warn(
+  console.error(
     'You are inserting the `responsive-layout` block directly. Please use `responsive-layout.desktop`, `responsive-layout.mobile`, `responsive-layout.tablet` or `responsive-layout.phone` instead.'
   )
 
-  return <span />
+  return null
 }
 
 export default ResponsiveLayoutDummy
