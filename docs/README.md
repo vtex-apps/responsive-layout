@@ -1,58 +1,67 @@
-# VTEX React App Template
+# VTEX Responsive Layout
 
-Our guide repository to structure for react apps, that should be used as a template.
+Responsive-layout allows you to declare layout structures that will only be rendered in a specific screen-size breakpoint.
 
-We use `yarn` as our default package manager, before coding make sure to run yarn on: `root` and `react` folders.
+There are four blocks defined and exported by this app:
 
-## Some features:
+- `responsive-layout.desktop`
+- `responsive-layout.mobile`
+- `responsive-layout.tablet`
+- `responsive-layout.phone`
 
-### Tests
+Each of them have `composition: children`, which means that they expect to receive an array of `children` blocks to be rendered by them, if the current screen-size is right for their breakpoint.
 
-For testing we use `@vtex/test-tools`, our own testing framework based on `react-testing-library`, the tests should be located on the `react/__tests__` folder. For references, visit our [repository](https://github.com/vtex/test-tools).
+## Example usage
 
-### Hooks
-
-Husky hooks tha runs on every `pre-commit` and `pre-push`.
-
-### Intl Equalizer
-
-Tool for equalizing the messages located on the `messages` folder/builder. It's configured to use the **en.json** as the default file for comparison. For references, visit our [repository](https://github.com/vtex/intl-equalizer).
-
-### Lint + Formatting
-
-TS lint configured with Prettier and .Config.
-
-### Available Scripts
+This is an example on how to use this:
 
 ```json
-{
-  "lint": "cd ./react && yarn lint",
-  "test": "cd ./react && yarn test",
-  "lint:locales": "intl-equalizer",
-  "locales:fix": "intl-equalizer --fix",
-  "verify": "yarn lint && yarn lint:locales && yarn test"
-}
+  "store.custom#about-us": {
+    "blocks": [
+      "responsive-layout.desktop#testing",
+      "responsive-layout.tablet#testing",
+      "responsive-layout.phone#testing"
+    ]
+  },
+
+  "rich-text#desktop": {
+    "props": {
+      "text": "# This will only show up on desktop.",
+      "blockClass": "title"
+    }
+  },
+  "rich-text#tablet": {
+    "props": {
+      "text": "# This will only show up on tablet.",
+      "blockClass": "title"
+    }
+  },
+  "rich-text#phone": {
+    "props": {
+      "text": "# This will only show up on phone.",
+      "blockClass": "title"
+    }
+  },
+  "rich-text#mobile": {
+    "props": {
+      "text": "# This will only show up on mobile.",
+      "blockClass": "title"
+    }
+  },
+
+  "responsive-layout.desktop#testing": {
+    "children": ["rich-text#desktop", "flex-layout.row#about-us"]
+  },
+  "responsive-layout.tablet#testing": {
+    "children": ["rich-text#tablet", "flex-layout.row#about-us"]
+  },
+  "responsive-layout.phone#testing": {
+    "children": ["rich-text#phone", "flex-layout.row#about-us2"]
+  },
+  "responsive-layout.mobile#testing": {
+    "children": ["flex-layout.row#about-us2"]
+  },
 ```
 
-### Ci
+Notice that you could use _any_ array of blocks as `children`, given that they are allowed by the `block` that is directly above your `responsive-layout`.
 
-#### Install:
-
-```yml
-install:
-  commands:
-    - echo Installing Packages...
-    - cd react
-    - npm install
-    - echo Packages installed!
-```
-
-#### Pre-build:
-
-```yml
-pre_build:
-  commands:
-    - echo Running tests...
-    - npm run verify
-    - echo Lint and tests finished!
-```

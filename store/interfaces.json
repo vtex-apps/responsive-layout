@@ -1,0 +1,25 @@
+{
+  "responsive-layout": {
+    "component": "ResponsiveLayoutDummy"
+  },
+  "responsive-layout.desktop": {
+    "component": "ResponsiveLayoutDesktop",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "responsive-layout.mobile": {
+    "component": "ResponsiveLayoutMobile",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "responsive-layout.tablet": {
+    "component": "ResponsiveLayoutTablet",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "responsive-layout.phone": {
+    "component": "ResponsiveLayoutPhone",
+    "composition": "children",
+    "allowed": "*"
+  }
+}
