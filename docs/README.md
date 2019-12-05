@@ -18,7 +18,7 @@ Each of them have `composition: children`, which means that they expect to recei
 1. Import the Responsive Layout app to your theme's dependencies on the `manifest.json`, for example:
 
 ```json
-  dependencies: {
+  "dependencies: {
     "vtex.responsive-layout": "0.x"
   }
 ```
