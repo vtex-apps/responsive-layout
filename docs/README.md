@@ -2,6 +2,8 @@
 
 Responsive-layout allows you to declare layout structures that will only be rendered in a specific screen-size breakpoint.
 
+![responsive-layout-gif](https://user-images.githubusercontent.com/27777263/70263027-3a4d2180-1774-11ea-80b2-47c503eba75c.gif)
+
 There are four blocks defined and exported by this app:
 
 - `responsive-layout.desktop`
