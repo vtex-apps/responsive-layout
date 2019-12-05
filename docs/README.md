@@ -11,9 +11,17 @@ There are four blocks defined and exported by this app:
 
 Each of them have `composition: children`, which means that they expect to receive an array of `children` blocks to be rendered by them, if the current screen-size is right for their breakpoint.
 
-## Example usage
+## Configuration
 
-This is an example on how to use this:
+1. Import the Responsive Layout app to your theme's dependencies on the `manifest.json`, for example:
+
+```json
+  dependencies: {
+    "vtex.responsive-layout": "0.x"
+  }
+```
+
+2. Add the `responsite-layout` block into your theme. Here's an example:
 
 ```json
   "store.custom#about-us": {
