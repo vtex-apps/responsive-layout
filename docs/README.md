@@ -18,10 +18,20 @@ This is an example on how to use this:
 ```json
   "store.custom#about-us": {
     "blocks": [
-      "responsive-layout.desktop#testing",
-      "responsive-layout.tablet#testing",
-      "responsive-layout.phone#testing"
+      "responsive-layout.desktop",
+      "responsive-layout.tablet",
+      "responsive-layout.phone"
     ]
+  },
+  
+  "responsive-layout.desktop": {
+    "children": ["rich-text#desktop"]
+  },
+  "responsive-layout.tablet": {
+    "children": ["rich-text#tablet"]
+  },
+  "responsive-layout.phone": {
+    "children": ["rich-text#phone"]
   },
 
   "rich-text#desktop": {
@@ -42,26 +52,6 @@ This is an example on how to use this:
       "blockClass": "title"
     }
   },
-  "rich-text#mobile": {
-    "props": {
-      "text": "# This will only show up on mobile.",
-      "blockClass": "title"
-    }
-  },
-
-  "responsive-layout.desktop#testing": {
-    "children": ["rich-text#desktop", "flex-layout.row#about-us"]
-  },
-  "responsive-layout.tablet#testing": {
-    "children": ["rich-text#tablet", "flex-layout.row#about-us"]
-  },
-  "responsive-layout.phone#testing": {
-    "children": ["rich-text#phone", "flex-layout.row#about-us2"]
-  },
-  "responsive-layout.mobile#testing": {
-    "children": ["flex-layout.row#about-us2"]
-  },
 ```
 
 Notice that you could use _any_ array of blocks as `children`, given that they are allowed by the `block` that is directly above your `responsive-layout`.
-
