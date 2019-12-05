@@ -2,6 +2,8 @@
 
 Responsive-layout allows you to declare layout structures that will only be rendered in a specific screen-size breakpoint.
 
+![responsive-layout-gif](https://user-images.githubusercontent.com/27777263/70263027-3a4d2180-1774-11ea-80b2-47c503eba75c.gif)
+
 There are four blocks defined and exported by this app:
 
 - `responsive-layout.desktop`
@@ -11,17 +13,35 @@ There are four blocks defined and exported by this app:
 
 Each of them have `composition: children`, which means that they expect to receive an array of `children` blocks to be rendered by them, if the current screen-size is right for their breakpoint.
 
-## Example usage
+## Configuration
 
-This is an example on how to use this:
+1. Import the Responsive Layout app to your theme's dependencies on the `manifest.json`, for example:
+
+```json
+  "dependencies: {
+    "vtex.responsive-layout": "0.x"
+  }
+```
+
+2. Add the `responsite-layout` block into your theme. Here's an example:
 
 ```json
   "store.custom#about-us": {
     "blocks": [
-      "responsive-layout.desktop#testing",
-      "responsive-layout.tablet#testing",
-      "responsive-layout.phone#testing"
+      "responsive-layout.desktop",
+      "responsive-layout.tablet",
+      "responsive-layout.phone"
     ]
+  },
+  
+  "responsive-layout.desktop": {
+    "children": ["rich-text#desktop"]
+  },
+  "responsive-layout.tablet": {
+    "children": ["rich-text#tablet"]
+  },
+  "responsive-layout.phone": {
+    "children": ["rich-text#phone"]
   },
 
   "rich-text#desktop": {
@@ -42,26 +62,6 @@ This is an example on how to use this:
       "blockClass": "title"
     }
   },
-  "rich-text#mobile": {
-    "props": {
-      "text": "# This will only show up on mobile.",
-      "blockClass": "title"
-    }
-  },
-
-  "responsive-layout.desktop#testing": {
-    "children": ["rich-text#desktop", "flex-layout.row#about-us"]
-  },
-  "responsive-layout.tablet#testing": {
-    "children": ["rich-text#tablet", "flex-layout.row#about-us"]
-  },
-  "responsive-layout.phone#testing": {
-    "children": ["rich-text#phone", "flex-layout.row#about-us2"]
-  },
-  "responsive-layout.mobile#testing": {
-    "children": ["flex-layout.row#about-us2"]
-  },
 ```
 
 Notice that you could use _any_ array of blocks as `children`, given that they are allowed by the `block` that is directly above your `responsive-layout`.
-
