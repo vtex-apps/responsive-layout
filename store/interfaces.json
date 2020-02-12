@@ -5,21 +5,25 @@
   "responsive-layout.desktop": {
     "component": "ResponsiveLayoutDesktop",
     "composition": "children",
-    "allowed": "*"
+    "allowed": "*",
+    "device": "desktop"
   },
   "responsive-layout.mobile": {
     "component": "ResponsiveLayoutMobile",
     "composition": "children",
-    "allowed": "*"
+    "allowed": "*",
+    "device": "mobile"
   },
   "responsive-layout.tablet": {
     "component": "ResponsiveLayoutTablet",
     "composition": "children",
-    "allowed": "*"
+    "allowed": "*",
+    "device": "tablet"
   },
   "responsive-layout.phone": {
     "component": "ResponsiveLayoutPhone",
     "composition": "children",
-    "allowed": "*"
+    "allowed": "*",
+    "device": "phone"
   }
 }
