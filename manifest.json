@@ -1,7 +1,7 @@
 {
   "vendor": "vtex",
   "name": "responsive-layout",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "title": "Responsive Layout",
   "description": "VTEX Responsive Layout app to allow different layouts to be rendered in different screens.",
   "builders": {
