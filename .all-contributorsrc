@@ -9,6 +9,17 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "none",
-  "contributors": [],
-  "contributorsPerLine": 7
+  "contributors": [
+    {
+      "login": "micas06gua",
+      "name": "Micael Pereira",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4580524?v=4",
+      "profile": "http://gabenna.io",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
