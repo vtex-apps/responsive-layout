@@ -23,7 +23,7 @@ Each of them have `composition: children`, which means that they expect to recei
   }
 ```
 
-2. Add the `responsite-layout` block into your theme. Here's an example:
+2. Add the `responsive-layout` block into your theme. Here's an example:
 
 ```json
   "store.custom#about-us": {
