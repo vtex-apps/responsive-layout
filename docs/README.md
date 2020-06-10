@@ -3,18 +3,18 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-Responsive-layout allows you to declare layout structures that will only be rendered in a specific screen-size breakpoint.
+Responsive Layout allows you to declare layout structures that will only be rendered in a specific screen-size breakpoint.
 
 ![responsive-layout-gif](https://user-images.githubusercontent.com/27777263/70263027-3a4d2180-1774-11ea-80b2-47c503eba75c.gif)
 
-There are four blocks defined and exported by this app:
+Now, you are able to use all blocks exported by the `responsive-layout` app. Check out the full list below:
 
-- `responsive-layout.desktop`
-- `responsive-layout.mobile`
-- `responsive-layout.tablet`
-- `responsive-layout.phone`
-
-> `responsive-layout.mobile` contains the tablet and mobile breakpoint.
+| Block name     | Description                                     |
+| -------------- | ----------------------------------------------- |
+| `responsive-layout.desktop` | Builds a responsive layout for desktop devices.   |
+| `responsive-layout.tablet` | Builds a responsive layout for tablet devices. | 
+| `responsible-layout.phone` | Builds a responsive layout for phone devices. |
+| `responsive-layout.mobile` | Builds a responsive layout for mobile devices, managing the tablet *and* phone breakpoints at the same time. |
 
 Each of them have `composition: children`, which means that they expect to receive an array of `children` blocks to be rendered by them, if the current screen-size is right for their breakpoint.
 
@@ -36,8 +36,7 @@ Each of them have `composition: children`, which means that they expect to recei
       "responsive-layout.desktop",
       "responsive-layout.tablet",
       "responsive-layout.phone"
-      // If `tablet` and `phone` are equal, just use `mobile`
-      // "responsive-layout.mobile"
+      // If `tablet` and `phone` are equal, just use the "responsive-layout.mobile" block
     ]
   },
   
@@ -72,6 +71,10 @@ Each of them have `composition: children`, which means that they expect to recei
 ```
 
 Notice that you could use _any_ array of blocks as `children`, given that they are allowed by the `block` that is directly above your `responsive-layout`.
+
+## Customization 
+
+No CSS Handles are available for the app customization.
 
 <!-- DOCS-IGNORE:start -->
 
