@@ -21,7 +21,7 @@ Each block has `composition: children`, which means that it expects to receive a
 1. Import the Responsive Layout app to your theme dependencies in the `manifest.json`. For example:
 
 ```json
-  "dependencies: {
+  "dependencies": {
     "vtex.responsive-layout": "0.x"
   }
 ```
