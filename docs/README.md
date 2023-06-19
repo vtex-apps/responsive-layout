@@ -3,22 +3,22 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-Responsive-layout allows you to declare layout structures that will only be rendered in a specific screen-size breakpoint.
+Responsive Layout allows you to declare layout structures that will only be rendered in a specific screen-size breakpoint.
 
-![responsive-layout-gif](https://user-images.githubusercontent.com/27777263/70263027-3a4d2180-1774-11ea-80b2-47c503eba75c.gif)
+![responsive-layout-gif](https://cdn.jsdelivr.net/gh/vtexdocs/dev-portal-content@main/images/vtex-responsive-layout-0.gif)
 
-There are four blocks defined and exported by this app:
+This app defines and exports four blocks:
 
 - `responsive-layout.desktop`
 - `responsive-layout.mobile`
 - `responsive-layout.tablet`
 - `responsive-layout.phone`
 
-Each of them have `composition: children`, which means that they expect to receive an array of `children` blocks to be rendered by them, if the current screen-size is right for their breakpoint.
+Each block has `composition: children`, which means that it expects to receive an array of `children` blocks for rendering if the current screen-size is right for its breakpoint.
 
 ## Configuration
 
-1. Import the Responsive Layout app to your theme's dependencies on the `manifest.json`, for example:
+1. Import the Responsive Layout app to your theme dependencies in the `manifest.json`. For example:
 
 ```json
   "dependencies: {
@@ -26,7 +26,7 @@ Each of them have `composition: children`, which means that they expect to recei
   }
 ```
 
-2. Add the `responsive-layout` block into your theme. Here's an example:
+2. Add the `responsive-layout` block to your theme. For example:
 
 ```json
   "store.custom#about-us": {
@@ -36,7 +36,7 @@ Each of them have `composition: children`, which means that they expect to recei
       "responsive-layout.phone"
     ]
   },
-  
+
   "responsive-layout.desktop": {
     "children": ["rich-text#desktop"]
   },
@@ -67,7 +67,7 @@ Each of them have `composition: children`, which means that they expect to recei
   },
 ```
 
-Notice that you could use _any_ array of blocks as `children`, given that they are allowed by the `block` that is directly above your `responsive-layout`.
+Note that you could use _any_ array of blocks as `children`, given that they are allowed by the `block` that is directly above `responsive-layout`.
 
 ## Contributors ✨
 
